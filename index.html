@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Wether App</title>
+    <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  document.getElementById("txt").style.fontSize = "xxx-large";
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+  </head>
+  <body style="background-color:lightgrey " onload="startTime()">
+    <div id="txt" style="text-align:center; size:100px"></div>
+    <form action="/" method="post">
+      <h1 style="text-align:center; padding-top:200px; "> <strong>Enter the Name of Your City.</strong></h1>
+      <label style="padding-left:500px" for="cityinput"> <strong>City Name:</strong>  </label>
+      <input id="cityinput" type="text" name="cityName" >
+      <button type="submit">Go</button>
+    </form>
+  </body>
+</html>
